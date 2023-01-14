@@ -1,0 +1,306 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d0ccd1;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #15e6cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #331a38;
+}
+
+header > h1 {
+    color: #331a38;
+    font-size: 3em;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#divPesquisa {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#campoPesquisa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pesquisa {
+    width: 50%;
+    height: 2rem;
+    border-radius: 2rem;
+    padding-left: 1%;
+    background-color: #331a38;
+    color: white;
+    font-size: 1rem;
+}
+
+#botaoPesquisar {
+    margin-left: 2%;
+    width: 15%;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: #d0ccd1;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#botaoPesquisar:hover {
+    background-color: #331a38;
+    color: white;
+    transition: 0.5s;
+}
+
+#divPesquisa > span {
+    color: #331a38;
+    margin-top: 1%;
+    font-size: 1.4rem;
+    z-index: 1;
+}
+
+#listaProdutos {
+    z-index: -1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+    flex-direction: row;
+}
+
+#mostraProdutos, #produtosPesquisados {
+    position: relative;
+    top: 60%;
+    transform: translateY(-50%);
+    border: 1px solid #331a38;
+    border-radius: .5rem;
+    width: 30%;
+    height: auto;
+    padding: 1rem;
+}
+
+#alertaProdutos {
+    color: #331a38;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#prateleira {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #331a38;
+    font-size: 1.2em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#produtosPesquisados {
+    position: relative;
+    display: none;
+    align-items: center;
+    height: 200px;
+}
+
+.detalhesProdutos {
+    color: #331a38;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#novoProduto {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botaoAdicionarProduto {
+    width: 30%;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    background-color: #d0ccd1;
+    color: black;
+    cursor: pointer;
+}
+
+#botaoAdicionarProduto:hover {
+    background-color: #331a38;
+    color: white;
+    transition: 0.5s;
+}
+
+.produtos, #listaPesquisa {
+    border: 1px solid #331a38;
+    padding: 0.4rem; 
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+#listaPesquisa {
+    height: 7rem;
+}
+
+.produtos {
+    flex-direction: column;
+    height: 2rem;
+}
+
+.produtos:hover {
+   height: 7rem;
+   transition: 0.5s;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    width: 40%;
+    height: 40%;
+    background-color: #331a38;
+    color: white;
+    z-index: 1;
+    border-radius: 2rem;
+    overflow: hidden;
+    animation-name: modalAnimado;
+    animation-duration: 0.5s;
+    border: none;
+}
+
+@keyframes modalAnimado {
+    from {
+        top: 0%;
+    } to {
+        top: 50%;
+    }
+}
+
+#modal-header {
+    background-color: #15e6cc;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+#modal-header > p {
+    font-size: 2em;
+}
+
+#botaoFechar {
+    position: fixed;
+    top: 1.4%;
+    left: 94.6%;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+
+#main-modal {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-modal > input {
+    width: 80%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+    padding-left: 1rem;
+    color: black;
+    font-size: 1.4rem;
+}
+
+#selecioneCategoria {
+    margin-bottom: 1rem;
+}
+
+#selecioneCategoria > label {
+    font-size: 1.4rem;
+}
+
+#gruposCategorias {
+    height: 1.4rem;
+    border-radius: 2rem;
+    
+}
+
+#botaoAdicionar {
+    width: 60%;
+    height: 2rem;
+    margin-top: 2rem;
+    border-radius: 4rem;
+    color: #331a38;
+    background-color: #d0ccd1;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#botaoAdicionar:hover {
+    background-color: #331a38;
+    color: white;
+    transition: 0.5s;
+}
+
+#alertaProdutos {
+    display: flex;
+    justify-content: center;
+}

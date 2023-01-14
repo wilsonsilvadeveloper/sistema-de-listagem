@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoques</title>
+    <link rel="stylesheet" href="./style/product.css">
+
+    <script src="./scripts/adicionandoProdutos.js" defer></script>
+    <script src="./scripts/buscaProdutos.js" defer></script>
+    <script src="./scripts/modal.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Listagem de produtos</h1>
+    </header>
+
+    <main>
+        <section class="container">
+            <div id="divPesquisa">
+                <div id="campoPesquisa">
+                    <input type="search" id="pesquisa" class="input" placeholder="Digite o nome do produto">
+                    <button type="submit" id="botaoPesquisar" onclick="pesquisa()">Procurar</button>
+                </div>
+                <span id="alertPesquisa"></span>
+            </div>
+        
+            <section id="listaProdutos">
+                <section id="mostraProdutos">
+                    <span id="alertaProdutos"></span>
+                    <!--<div id="produtos" class="produtos"> 
+                        <p id="nomeProduto" class="detalhesProdutos">Nome: </p>
+                        <p id="categoria" class="detalhesProdutos">Categoria: </p>
+                        <p id="qauntidade" class="detalhesProdutos">No Estoque: </p>
+                        <p id="validade" class="detalhesProdutos">Validade: </p>
+                    </div> -->
+                    <span id="prateleira">Produtos na Prateleira = </span>
+                </section>
+
+                <section id="produtosPesquisados">
+                    <div id="listaPesquisa">
+                        <p id="nomeProdutoPesquisado" class="detalhesProdutos">Nome: </p>
+                        <p id="categoriaPesquisada" class="detalhesProdutos">Categoria: </p>
+                        <p id="estoquePesquisado" class="detalhesProdutos">No Estoque: </p>
+                        <p id="validadePesquisada" class="detalhesProdutos">Validade: </p>
+                    </div>
+                </section>
+
+                
+            </section>
+        </section>
+
+
+        <section id="modal">
+            <div id="modal-header">
+                <p>Adicionar novo produto</p>
+                <button type="button" class="botao" id="botaoFechar"  onclick="fecharModal()">X</button>
+            </div>
+
+            <main id="main-modal">
+                <input type="text" id="AdicionarNomeProduto" required class="input" placeholder="Nome do produto">
+
+                <div id="selecioneCategoria">
+                    <label for="categorias">Selecione a categoria</label>
+                        <select name="categorias" id="gruposCategorias">
+                            <option value="selecione">selecione</option>
+                            <option value="Acessorios Eletronicos">Acessorios Eletronicos</option>
+                            <option value="frutas">frutas</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Roupas">Roupas</option>
+                            <option value="Eletrodomesticos">Eletrodomesticos</option>
+                            <option value="Automoveis">Automoveis</option>
+                            <option value="Brinquedos">Brinquedos</option>
+                            <option value="Materiais de Construçaõ">Materias de Construçaõ</option>
+                        </select>
+                    </div>
+                    <input type="number" required id="adicionarEstoque" class="input" placeholder="Disponiveis">
+                    <input type="date" required id="AdicionarValidade" class="input" placeholder="Data de Validade">
+    
+                    <button class="botao" id="botaoAdicionar" onclick="AdicionarNewProduct()">Adicionar Produto</button>
+            </section>
+            </main>
+          
+
+        <div id="novoProduto">
+            <button type="submit" id="botaoAdicionarProduto" onclick="abriModal()">Adicionar</button>
+        </div>
+    </main>
+    
+</body>
+</html>
